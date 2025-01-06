@@ -30,7 +30,8 @@ namespace Inventory
                 {
                     conn.Open();
                     _products.Clear();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Product_Inventory", conn);
+                    SqlCommand cmd = new SqlCommand("DisplayProduct", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataReader reader = cmd.ExecuteReader(); 
                     while (reader.Read())
                     {
@@ -71,7 +72,8 @@ namespace Inventory
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Product_Inventory ([Product Name], ProductDescription,Quantity, Price, ProductType, ShipmentStatus) VALUES (@ProductName,@ProductDescription,@Quantity,@Price,@ProductType,@ShipmentStatus)", conn);
+                    SqlCommand cmd = new SqlCommand("InsertProduct", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ProductName", product.ProductName);
                     cmd.Parameters.AddWithValue("@ProductDescription", product.ProductDescription);
                     cmd.Parameters.AddWithValue("@Quantity", product.Quantity);
