@@ -6,13 +6,13 @@ Overview
 
 Features 
 
--Add new products to the inventory. 
--Update existing product details. 
--Delete products from the inventory. 
--View a list of all products. 
+- Add new products to the inventory. 
+- Update existing product details. 
+- Delete products from the inventory. 
+- View a list of all products. 
 
  Requirements 
  
--.NET 6.0 
+- .NET 6.0 
 - SQL Server 
 - Visual Studio 2022 
